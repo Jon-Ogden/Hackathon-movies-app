@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_20_203217) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_08_210827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "char_name"
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_actors_on_movie_id"
+  end
+
+  create_table "directors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "likes_movies", force: :cascade do |t|
+    t.integer "user_id"
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_likes_movies_on_movie_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.bigint "director_id", null: false
+    t.integer "year"
+    t.integer "length"
+    t.string "rating"
+    t.string "mpa"
+    t.string "studio"
+    t.text "description"
+    t.integer "budget"
+    t.string "poster"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["director_id"], name: "index_movies_on_director_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -44,4 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_20_203217) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "actors", "movies"
+  add_foreign_key "likes_movies", "movies"
+  add_foreign_key "movies", "directors"
 end
