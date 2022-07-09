@@ -1,12 +1,3 @@
-.login-button{
-  text-align: right;
-}
-
-
-nav > .login-button {
-  text-align: right;
-}
-button {
-  text-align: center;
-
+.Navbar{
+background-color: black;
 }

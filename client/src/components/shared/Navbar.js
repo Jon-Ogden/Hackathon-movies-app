@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Button from "../styled-components/Button";
 import { useNavigate } from "react-router-dom";
-import "../../CSS/login-button.css";
-
+import "../../CSS/Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
   const { user, logout } = useContext(AuthContext);
@@ -12,7 +11,7 @@ const Navbar = () => {
   const renderNavItems = () => {
     if (user) {
       return (
-        <div className="login-button">
+        <>
           <Button
             event={() => {
               navigate("/account");
@@ -27,7 +26,22 @@ const Navbar = () => {
           >
             Logout
           </Button>
-        </div>
+          <Button
+            event={() => {
+              navigate("/movies");
+            }}
+          >
+            All Movies
+          </Button>
+          <Button
+            event={() => {
+              navigate("/directors");
+            }}
+          >
+            All Directors
+          </Button>
+          <hr />
+        </>
       );
     } else {
       return (
@@ -48,6 +62,21 @@ const Navbar = () => {
           >
             Register
           </Button>
+          <Button
+            event={() => {
+              navigate("/movies");
+            }}
+          >
+            All Movies
+          </Button>
+          <Button
+            event={() => {
+              navigate("/directors");
+            }}
+          >
+            All Directors
+          </Button>
+          <hr />
         </>
       );
     }
