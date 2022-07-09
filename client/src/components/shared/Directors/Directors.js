@@ -1,14 +1,14 @@
-import { Axios } from "axios";
-import AxiosProvider from "../../../providers/AxiosProvider";
 import DirectorCard from "./DirectorCard";
 import { useContext } from "react";
+import { AxiosContext } from "../../../providers/AxiosProvider";
 
 const Directors = () => {
-  const { directors } = useContext(AxiosProvider);
+  const { directors } = useContext(AxiosContext);
+  console.log(directors);
 
   const renderDirectors = () => {
     return directors.map((c) => {
-      return <DirectorCard key={c.id} id={c.id} name={c.age} age={c.name} />;
+      return <DirectorCard key={c.id} id={c.id} name={c.name} age={c.age} />;
     });
   };
 
