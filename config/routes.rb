@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         resources :actors
     end
     get '/actors', to: 'actors#all_actors'
-    get '/movies', to: 'movies#all_movies'
+    get '/all_movies', to: 'movies#all_movies'
     get '/movie/:id/likes', to: 'movies#movie_likes'
     get '/user/:id/likes', to: 'users#user_likes'
     post '/likes', to: 'likes#create'

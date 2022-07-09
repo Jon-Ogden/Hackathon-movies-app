@@ -31,14 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_230159) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "liked_movies", force: :cascade do |t|
-    t.integer "user_id"
-    t.bigint "movie_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_liked_movies_on_movie_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
@@ -95,7 +87,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_230159) do
   end
 
   add_foreign_key "actors", "movies"
-  add_foreign_key "liked_movies", "movies"
   add_foreign_key "likes", "movies"
   add_foreign_key "likes", "users"
   add_foreign_key "movies", "directors"
