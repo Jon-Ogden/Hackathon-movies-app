@@ -27,7 +27,7 @@ export default function MovieCard(props){
       <Card sx={{ maxWidth: 345 }}>
         <CardHeader
           title={props.title}
-          subheader={props.director}
+          subheader="Directed by: "{props.director}
         />
         <CardMedia
           component="img"
