@@ -63,7 +63,7 @@ const AxiosProvider = ({ children }) => {
     let newMovies = movies.map((c) => (c.id === newInfo.id ? newInfo : c));
     setMovies(newMovies);
     axios.put(
-      `/api/directors/${newInfo.director_id}/movies/${newInfo.id}`,
+      `/api/directors/${newInfo.oldD_id}/movies/${newInfo.id}`,
       newInfo
     );
   };

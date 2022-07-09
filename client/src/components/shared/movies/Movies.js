@@ -1,24 +1,13 @@
+import { Button } from "@mui/material"
 import axios from "axios"
 import { useContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { AxiosContext } from "../../../providers/AxiosProvider"
 import MovieCard from "./MovieCard"
 
 export default function Movies(){
     const { movies, directors } = useContext(AxiosContext)
-    // const [directors, setDirectors] = useState([])
-
-    // const getDirectors = async() => {
-    //     try{
-    //         let res = await axios.get('/api/directors')
-    //         setDirectors(res.data)
-    //     }catch(err){
-    //         alert(err)
-    //     }
-    // }
-
-    // useEffect(()=>{
-    //     getDirectors()
-    // },[])
+    const navigate = useNavigate();
 
 
     const renderMovies = () => {
@@ -42,6 +31,7 @@ export default function Movies(){
     return(
         <div>
             <h1>MOVIES!</h1>
+            <Button onClick={()=>{navigate('/addMovie')}}>Add a Movie</Button>
             {renderMovies()}
         </div>
     )

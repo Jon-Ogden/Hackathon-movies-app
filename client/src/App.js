@@ -10,6 +10,7 @@ import UserAccount from './components/shared/UserAccount';
 import FetchUser from './components/auth/FetchUser';
 import Movies from "./components/shared/movies/Movies";
 import EditMovie from "./components/shared/movies/EditMovie";
+import AddMovie from "./components/shared/movies/AddMovie";
 
 const App = () => (
   <>
@@ -24,6 +25,7 @@ const App = () => (
         <Route  element={<ProtectedRoute/>}>
             <Route path="/account" element={<UserAccount />} />
             <Route path="/editMovie/:id" element={<EditMovie />} />
+            <Route path="/addMovie" element={<AddMovie />} />
         </Route>
         <Route path="/*" element={<NoMatch />} />
       </Routes>
