@@ -15,15 +15,15 @@ const AxiosProvider = ({ children }) => {
     } catch (err) {
       alert(err);
     }
+  };
 
-    const getMovies = async () => {
-      try {
-        let res = await axios.get("/api/all_movies");
-        setMovies(res.data);
-      } catch (err) {
-        alert(err);
-      }
-    };
+  const getMovies = async () => {
+    try {
+      let res = await axios.get("/api/all_movies");
+      setMovies(res.data);
+    } catch (err) {
+      alert(err);
+    }
   };
 
   const getActors = async () => {
@@ -76,8 +76,8 @@ const AxiosProvider = ({ children }) => {
     axios.delete(`/api/directors/${d_id}/movies/${id}`);
   };
 
-  const updateActor = async (newInfo) => {
-    let newActors = actors.map((c) => (c.id == newInfo.id ? newInfo : c));
+  const updateActor = async (newInfo, id) => {
+    let newActors = actors.map((c) => (c.id === newInfo.id ? newInfo : c));
     setActors(newActors);
     axios.put(`/api/movies/${newInfo.movie_id}/actors/${newInfo.id}`, newInfo);
   };
