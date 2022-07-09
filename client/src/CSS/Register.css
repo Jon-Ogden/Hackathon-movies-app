@@ -1,4 +1,10 @@
 .register{
-  background-color: lightgray;
   text-align: center;
+  border: lightgray 1px solid;
+  height: 370px;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  position: relative;
+  border-radius: 10px;
 }

@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import "../../CSS/Register.css";
+import Button from "@mui/material/Button";
+import { Link } from "@mui/material";
 
 const Register = () => {
   const { register } = useContext(AuthContext);
@@ -24,7 +26,7 @@ const Register = () => {
   return (
     <div className="register">
       <h1>Register</h1>
-      <br />
+
       <form onSubmit={handleSubmit}>
         <label>Email</label>
         <br />
@@ -64,8 +66,14 @@ const Register = () => {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br />
-        <button type="submit">register</button>
+        <br />
+        <Button variant="contained" type="submit">
+          register
+        </Button>
       </form>
+      <hr />
+      <p>Already have an accont? </p>
+      <Link href="login">Sign-in</Link>
     </div>
   );
 };
