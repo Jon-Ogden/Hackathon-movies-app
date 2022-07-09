@@ -18,7 +18,7 @@ export default function DirectorCardPage(props) {
             color="text.secondary"
             age={props.movies}
           >
-            {`Movies: ${props.movies}`}
+            <h3>Movies: </h3>
           </Typography>
         </CardContent>
       </Card>
