@@ -16,17 +16,17 @@ d2 = Director.create(name:"Christopher Nolan", age:51)
 d3 = Director.create(name:"Shawn Levy", age:53)
 d4 = Director.create(name:"Jon Favreau", age:55)
 
-m1 = d1.movies.create(title:"The Avengers", year:2012, length:143, rating:"8.0/10", mpa:"PG-13", studio:"Marvel Studios", budget:220000000, poster:"https://variety.com/wp-content/uploads/2014/04/01-avengers-2012.jpg")
+m1 = d1.movies.create(title:"The Avengers", year:2012, length:143, rating:"8.0/10", mpa:"PG-13", studio:"Marvel Studios", budget:220000000, poster:"https://artwisher.com/files/products/800x1423_501.1400x1400.jpg?23cd9fa18089d913467c3cc1a54311c7")
 m2 = d1.movies.create(title:"Serenity", year:2005, length:119, rating:"7.8/10", mpa:"PG-13", studio:"Universal Studios", budget:39000000, poster:"https://m.media-amazon.com/images/I/61L23t8noEL._AC_SL1334_.jpg")
 m3 = d1.movies.create(title:"Avengers: Age of Ultron", year:2015, length:141, rating:"7.3/10", mpa:"PG-13", studio:"Marvel Studios", budget:365000000, poster:"https://www.budgetsavvydiva.com/wp-content/uploads/2015/04/avengers_age_of_ultron_ver12_xlg1.jpg")
 
-m4 = d2.movies.create(title:"Inception", year:2010, length:148, rating:"8.8/10", mpa:"PG-13", studio:"Warner Bros.", budget:160000000, poster:"https://static.wikia.nocookie.net/chrisnolan/images/9/91/Inception_poster.jpg/revision/latest?cb=20200702044303")
+m4 = d2.movies.create(title:"Inception", year:2010, length:148, rating:"8.8/10", mpa:"PG-13", studio:"Warner Bros.", budget:160000000, poster:"https://m.media-amazon.com/images/I/61xzvfJiNkL._AC_.jpg")
 m5 = d2.movies.create(title:"The Dark Knight", year:2008, length:152, rating:"8.4/10", mpa:"PG-13", studio:"Warner Bros.", budget:185000000, poster:"https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg")
 m6 = d2.movies.create(title:"Interstellar", year:2014, length:169, rating:"8.6/10", mpa:"PG-13", studio:"Warner Bros.", budget:165000000, poster:"https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg")
 
 m7 = d3.movies.create(title:"Free Guy", year:2021, length:115, rating:"7.1/10", mpa:"PG-13", studio:"20th Century Studios", budget:125000000, poster:"https://m.media-amazon.com/images/I/8137Dl0ubpL._AC_SL1500_.jpg")
 m8 = d3.movies.create(title:"Real Steel", year:2011, length:127, rating:"7.0/10", mpa:"PG-13", studio:"Dreamworks Pictures", budget:110000000, poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdfPZ3VbusH1U8IZMBiIhZa6yIBvtyErrMUcHv41oOfnpADPqO")
-m9 = d4.movies.create(title:"The Adam Project", year:2022, length:106, rating:"6.7/10", mpa:"PG-13", studio:"Skydance Media", budget:116000000, poster:"https://www.themoviedb.org/t/p/w500/wFjboE0aFZNbVOF05fzrka9Fqyx.jpg")
+m9 = d3.movies.create(title:"The Adam Project", year:2022, length:106, rating:"6.7/10", mpa:"PG-13", studio:"Skydance Media", budget:116000000, poster:"https://www.themoviedb.org/t/p/w500/wFjboE0aFZNbVOF05fzrka9Fqyx.jpg")
 
 m10 = d4.movies.create(title:"Iron Man", year:2008, length:126, rating:"7.9/10", mpa:"PG-13", studio:"Marvel Studios", budget:140000000, poster:"https://posterspy.com/wp-content/uploads/2021/03/Iron_Man-200th_Poster.jpg")
 m11 = d4.movies.create(title:"Elf", year:2003, length:97, rating:"7.0/10", mpa:"PG", studio:"Universal Studios", budget:33000000, poster:"http://beartooththeatre.net/wp-content/uploads/elf-movie-poster.jpg")

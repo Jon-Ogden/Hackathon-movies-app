@@ -15,6 +15,7 @@ const AxiosProvider = ({ children }) => {
     } catch (err) {
       alert(err);
     }
+<<<<<<< HEAD
   };
 
   const getMovies = async () => {
@@ -23,6 +24,16 @@ const AxiosProvider = ({ children }) => {
       setMovies(res.data);
     } catch (err) {
       alert(err);
+=======
+    
+    const getMovies = async() => {
+        try{
+            let res = await axios.get('/api/all_movies')
+            setMovies(res.data)
+        }catch(err){
+            alert(err)
+        }
+>>>>>>> 604eb2ceb1a8ea7f8dafc44bd50dff7b139209b7
     }
   };
 
@@ -76,6 +87,7 @@ const AxiosProvider = ({ children }) => {
     axios.delete(`/api/directors/${d_id}/movies/${id}`);
   };
 
+<<<<<<< HEAD
   const updateActor = async (newInfo, id) => {
     let newActors = actors.map((c) => (c.id === newInfo.id ? newInfo : c));
     setActors(newActors);
@@ -90,6 +102,22 @@ const AxiosProvider = ({ children }) => {
     setActors(actors.filter((c) => c.id !== id));
     axios.delete(`/api/movies/${m_id}/actors/${id}`);
   };
+=======
+    const updateActor = async(newInfo) => {
+        let newActors = actors.map(c => c.id == newInfo.id ? newInfo : c)
+        setActors(newActors)
+        axios.put(`/api/movies/${newInfo.movie_id}/actors/${newInfo.id}`, newInfo)
+    }
+    const newActor = async (newInfo) => {
+        let newActors = [...actors, newInfo]
+        setActors(newActors)
+        axios.post(`/api/movies/${newInfo.movie_id}/actors/`, newInfo)
+    }
+    const deleteActor = (id, m_id) => {
+        setActors(actors.filter(c => c.id !== id))
+        axios.delete(`/api/movies/${m_id}/actors/${id}`)
+    }
+>>>>>>> 604eb2ceb1a8ea7f8dafc44bd50dff7b139209b7
 
   return (
     <AxiosContext.Provider
