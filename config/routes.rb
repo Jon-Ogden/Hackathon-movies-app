@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     resources :directors do
-      resources :movies do
-        resources :actors 
-      end
+      resources :movies
+    end
+    resources :movies do
+        resources :actors
     end
     get '/actors', to: 'actors#all_actors'
     get '/movies', to: 'movies#all_movies'
