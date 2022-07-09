@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import "../../CSS/Login.css";
+import Button from "@mui/material/Button";
+import { Link } from "@mui/material";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -17,6 +19,7 @@ const Login = () => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label>Email</label>
+        <br />
         <input
           required
           autoFocus
@@ -25,14 +28,21 @@ const Login = () => {
         />
         <br />
         <label>password</label>
+        <br />
         <input
           required
           autoFocus
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <br />
+        <br />
+        <Button variant="contained" type="submit">
+          Login
+        </Button>
       </form>
+      <hr />
+      <Link href="register">Create your account</Link>
     </div>
   );
 };
