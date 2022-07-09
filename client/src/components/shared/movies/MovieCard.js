@@ -15,19 +15,26 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { useNavigate} from 'react-router-dom';
 
 export default function MovieCard(props){
     const [expanded, setExpanded] = React.useState(false);
+    const navigate = useNavigate()
 
     const handleExpandClick = () => {
       setExpanded(!expanded);
     };
   
     return (
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345 }} className="card">
         <CardHeader
+          action={
+            <IconButton aria-label="settings" onClick={()=>{navigate(`/editMovie/${props.id}`)}}>
+                <MoreVertIcon />
+            </IconButton>
+          }
           title={props.title}
-          subheader="Directed by: "{props.director}
+          subheader={`Directed by: ${props.director}`}
         />
         <CardMedia
           component="img"
@@ -37,9 +44,7 @@ export default function MovieCard(props){
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to cook
-            together with your guests. Add 1 cup of frozen peas along with the mussels,
-            if you like.
+            {`Released in ${props.year}`}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -60,10 +65,21 @@ export default function MovieCard(props){
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Method:</Typography>
+            <Typography paragraph>More info:</Typography>
             <Typography paragraph>
-              Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-              aside for 10 minutes.
+              {`Length: ${props.length} minutes`}
+            </Typography>
+            <Typography paragraph>
+              {`IMDB Rating: ${props.rating}`}
+            </Typography>
+            <Typography paragraph>
+              {`MPAA Maturity rating: ${props.mpa}`}
+            </Typography>
+            <Typography paragraph>
+              {`Made by ${props.studio}`}
+            </Typography>
+            <Typography paragraph>
+              {`Budget: $${props.budget}`}
             </Typography>
           </CardContent>
         </Collapse>
