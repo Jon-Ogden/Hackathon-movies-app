@@ -35,6 +35,7 @@ const DirectorsPage = () => {
           studio={c.studio}
           budget={c.budget}
           poster={c.poster}
+          director={director.name}
         />
       );
     });
