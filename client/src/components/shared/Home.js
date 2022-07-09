@@ -10,10 +10,11 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <Title>Home</Title>
+      <Title>About us!</Title>
       <h2 type="t4">Find your favorite movies and Directors</h2>
       {user ? <p>Hello, {user.name}</p> : <Text>not logged in</Text>}
-      {/* <DirectorPage /> */}
+      <Text>Our names are Jon and Matt and we have an exciting new product for you today!</Text>
+      <Text>This is [unnamed movie app] here to fulfill all your wildest dreams!</Text>
     </div>
   );
 };

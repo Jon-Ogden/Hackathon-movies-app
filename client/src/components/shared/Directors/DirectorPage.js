@@ -1,14 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import DirectorCardPage from "./DirectosCardPage";
 import { AxiosContext } from "../../../providers/AxiosProvider";
 import { useParams } from "react-router-dom";
 import MovieCard from "../movies/MovieCard";
+import axios from "axios";
 
 const DirectorsPage = () => {
-  const { directors, movies } = useContext(AxiosContext);
-  console.log(directors);
+  const { movies } = useContext(AxiosContext);
   const params = useParams();
-  let director = directors.filter((d) => params.id == d.id)[0];
+  const [director, setDirector] = useState([])
+
+  const getDirectors = async () => {
+    try {
+      let res = await axios.get(`/api/directors/${params.id}`);
+      setDirector(res.data);
+    } catch (err) {
+      alert(err);
+    }
+  };
+  
+  useEffect(()=>{
+getDirectors();
+  },[])
+
+  
   const directormovie = movies.filter((m) => params.id == m.director_id);
   const renderDirectors = () => {
     console.log(directormovie);
@@ -21,6 +36,8 @@ const DirectorsPage = () => {
       />
     );
   };
+
+
   const renderMovies = () => {
     return directormovie.map((c) => {
       return (
