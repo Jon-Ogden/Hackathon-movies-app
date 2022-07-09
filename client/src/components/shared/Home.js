@@ -9,9 +9,9 @@ const Home = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div>
+    <div className="Home">
       <Title>Home</Title>
-      <Title type="t2">The quick, brown fox jumps over the lazy river.</Title>
+      <h2 type="t4">Find your favorite movies and Directors</h2>
       {user ? <p>Hello, {user.name}</p> : <Text>not logged in</Text>}
       {/* <DirectorPage /> */}
     </div>
